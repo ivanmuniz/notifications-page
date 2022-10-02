@@ -1,0 +1,179 @@
+:root{
+  --font-size: 16px;
+  --primary-color: hsl(1, 90%, 64%);
+  --secondary-color: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(assets/fonts/static/PlusJakartaSans-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(assets/fonts/static/PlusJakartaSans-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans";
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-grayish-blue-1);
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 50px auto;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .container {
+    width: 75%;
+    margin: 50px auto;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 991px) {
+  .container {
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 10px;
+  }
+}
+
+.container {
+  background-color: var(--white);
+  padding: 15px;
+}
+
+p {
+  font-size: var(--font-size);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.header .left {
+  font-weight: 800;
+  display: flex;
+  gap: 10px;
+}
+
+.header .right {
+  color: var(--grayish-blue);
+}
+
+.header .count {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  width: 25px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.notification {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 15px;
+  column-gap: 15px;
+}
+
+.notification .user-img {
+  height: 50px;
+}
+
+.notification .notification-img {
+  height: 50px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.notification .notification-img:hover {
+  border: 2px solid var(--grayish-blue);
+  border-radius: 10px;
+}
+
+.notification p {
+  font-size: var(--font-size);
+  color: var(--grayish-blue);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--secondary-color);
+}
+
+.link-primary {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+}
+
+.link-secondary {
+  color: var(--grayish-blue);
+  font-weight: 800;
+}
+
+.notification p.notification-time-ago {
+  color: var(--grayish-blue);
+}
+
+.notification .private-message {
+  color: var(--grayish-blue);
+  padding: 15px;
+  border: 1px solid var(--grayish-blue);
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.notification .private-message:hover {
+  background-color: var(--light-grayish-blue-2);
+  border-color: var(--light-grayish-blue-2);
+}
+
+.notification.unread {
+  background-color: var(--very-light-grayish-blue);
+}
+
+.notification.unread p:not(.notification-time-ago)::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: inline-block;
+  margin-left: 5px;
+}
